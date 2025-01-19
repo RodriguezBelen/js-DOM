@@ -4,3 +4,8 @@
 /* .productos{
     background-color: aqua;
 } */
+
+/*No toma el cambio del documento "style", aun estando linkeado en el html */
+    .fondo-verde{
+        background-color: blue;
+    }
