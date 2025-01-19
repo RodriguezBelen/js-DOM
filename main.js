@@ -29,4 +29,26 @@ li.setAttribute('id', 'ultimoLink')
 
  const seccionProductos = document.querySelector('.productos');
 //  console.log(seccionProductos.classList); 
-seccionProductos.classList.add('fondo-verde)');
+// seccionProductos.classList.add('fondo-verde)');
+// seccionProductos.classList.remove('fondo-verde)');
+
+seccionProductos.classList.toggle('fondo-verde)');
+
+console.log(seccionProductos.classList.contains('fondo-verde'))
+
+// contenedor
+const header = document.querySelector('header')
+// elemento
+const boton = document.createElement('button');
+boton.innerText = 'Menu';
+//asociación del boton al contenedor
+header.append(boton)
+
+//evento:
+boton.addEventListener('click', () => {
+    console.log('Boton presionado')
+})
+
+
+
+
