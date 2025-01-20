@@ -44,6 +44,7 @@ console.log(container);
 // const p = document.createElement('p');
 // card.append(p);
 
+// let precioInput = Number(prompt('Ingrese un precio para ofertar productos'))
 
 for (let producto of productosTecnologicos) {
     // console.log(producto.nombre) para ver en la consola solo el nombre
@@ -57,20 +58,15 @@ for (let producto of productosTecnologicos) {
 
     for (let keyProducto in producto) {
         const p = document.createElement('p')
-        //       p.textContent = `${keyProducto}: ${producto[keyProducto]}`
-        p.innerHTML = `<span class="prop">${keyProducto}:</span> $ ${producto[keyProducto]} ¡OFERTA!`;
+        if (Number(producto['precio']) < 250 && keyProducto === 'precio') {
+            p.classList.add('oferta')
+            p.innerHTML = `<span class="prop">${keyProducto}:</span> $ ${producto[keyProducto]} ¡OFERTA!`
+        } else {
+            p.innerHTML = `<span class="prop">${keyProducto}:</span> ${producto[keyProducto]}`
+        }
         card.append(p)
-        // console.log(`${keyProducto}: ${producto[keyProducto]}`)
     }
-    console.log('-------------------------------------------')
-
-    //p.textContent = product.marca
-    //         if(Number(producto['precio'])<250 && keyProducto === 'precio'){
-    //          p.classList.add('oferta')   
-    //         }else{
-    //             p.innerHTML = `<span class="prop">${keyProducto}:</span> ${producto[keyProducto]}`;
-    //         }
-    //     }
-    container.append(card);
+container.append(card);
 }
+
 
